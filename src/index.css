@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+
+body {
+  margin: 0;
+  --textField-color: red
+}
+
+/*All modal and component styling*/
+/* Input Field */
+.inputField {
+  outline: 1px solid rgb(196, 196, 196);
+  border-radius: 3px;
+  border: none;
+  height: 25px;
+  font-size: 85%;
+  padding-left: 7px;
+  color: rgb(92, 92, 92);
+}
+
+#selectField , #dateField, #listOfValue{
+  outline: 1px solid rgb(196, 196, 196);
+  border-radius: 3px;
+  border: none;
+  height: 25px;
+  font-size: 85%;
+  padding-left: 7px;
+  color: rgb(92, 92, 92);
+}
+
+.inputFieldDisabled {
+  background-color: rgb(221, 221, 221) !important;
+  outline: 1px solid rgb(196, 196, 196);
+  border-radius: 3px;
+  border: none;
+  height: 25px;
+  font-size: 90%;
+  padding-left: 7px;
+}
+
+.inputField:focus, #selectField:focus, #dateField:focus , #listOfValue:focus {
+  /* outline: 2px solid rgb(131, 184, 255); */
+  outline: 2px solid orange;
+  border: none;
+}
+
+.inp{
+  outline: 1px solid rgb(196, 196, 196);
+  border-radius: 3px;
+  border: none;
+  height: 35px;
+  font-size: 95%;
+  padding-left: 7px;
+  color: rgb(92, 92, 92);
+}
+
+.inp:focus{
+  outline: 2px solid #00b0ec;
+  border: none;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.button {
+  overflow: hidden;
+  position: relative
+}
+
+.button:after {
+  content: "";
+  background: rgb(143, 214, 255);
+  border-radius:100px;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -120px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 1s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+/*cash deposit */
+.cash__deposit {
+  height: 100vh;
+}
+
+
+.cashDeposit__container {
+  display: flex;
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.action-button {
+  margin-left: 15px;
+}
+
+
+.left-section {
+  padding: 20px;
+}
+
+/*Temp*/
+.temp {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #4CA1AF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*Card Component*/
+.the-card-component {
+  border-radius: 5px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 240px;
+  height: 100px;
+  text-align: center;
+  margin: 15px;
+  /* background-image: url("/public/assets/back5.png"); */
+  background-size: cover;
+  object-fit: contain;
+  background-repeat: no-repeat;
+}
+
+
+.the-card-component:hover {
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.temp-card-row {
+  display: flex;
+}
+
+
+@media only screen and (max-width: 700px){
+  .the-card-component {
+    width: 130px;
+    flex-direction: column;
+    background-color: white;
+    height: 130px;
+    
+  }
+
+  .temp-card-row {
+    flex-direction: column;
+  }
+}
+
+
+@media only screen and (max-width: 700px){
+  
+  .cash__deposit {
+    height: 100%;
+    
+  }
+
+  .left-section {
+    padding: 10px;
+  }
+
+  .whole-section {
+    flex-direction: column;
+  }
+
+  .read-only-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cashDeposit__container {
+    flex-direction: column;
+  }
+  .button-section {
+    flex-direction: column;
+    align-items: left;
+  }
+  .action-button {
+    margin-top: 15px;
+    margin-left: 15px;
+
+  }
+}
